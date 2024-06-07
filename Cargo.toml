@@ -1,0 +1,10 @@
+[package]
+name = "game_engine"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+color-eyre = "0.6"
+
+[profile.dev.package.backtrace]
+opt-level = 3
