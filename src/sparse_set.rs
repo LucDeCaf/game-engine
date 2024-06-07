@@ -1,13 +1,11 @@
-use crate::traits::{Component, ComponentStore};
-
 #[derive(Debug)]
-pub struct SparseSet<C: Component + Sized> {
+pub struct SparseSet<C> {
     sparse: Vec<Option<usize>>,
     dense: Vec<C>,
     entities: Vec<usize>,
 }
 
-impl<C: Component + Sized> SparseSet<C> {
+impl<C> SparseSet<C> {
     pub fn remove(&mut self, entity_id: usize) -> Option<C> {
         if entity_id >= self.sparse.len() {
             return None;
@@ -72,5 +70,3 @@ impl<C: Component + Sized> SparseSet<C> {
         self.entities.clear();
     }
 }
-
-impl<C: Component + Sized> ComponentStore for SparseSet<C> {}

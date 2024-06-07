@@ -18,6 +18,7 @@ fn main() -> Result<()> {
 
     println!("Player with ID {player_id} successfully created");
     println!("Position: {:?}", app.get_component::<Position>(player_id));
+    println!("Velocity: {:?}", app.get_component::<Velocity>(player_id));
 
     Ok(())
 }
